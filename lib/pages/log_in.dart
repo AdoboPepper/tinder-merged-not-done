@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tinder_clone/main.dart';
 import 'package:tinder_clone/pages/welcome_to_tinder.dart';
+
 
 class LogIn extends StatefulWidget {
   const LogIn({Key key}) : super(key: key);
@@ -21,13 +23,18 @@ class _LogInState extends State<LogIn> {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(
-                    Icons.account_circle,
-                    size: 80,
-                    color: Colors.white,
+                children:  [
+                  Container(
+                    height: 50,
+                    width: 50,
+                    child: Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: SvgPicture.asset(
+                        "assets/images/explore_icon.svg", color: Colors.white,
+
+                      ),
+                    ),
                   ),
-                  // Welcome to MATCHA
                   SizedBox(
                     width: 10,
                   ),
@@ -41,9 +48,9 @@ class _LogInState extends State<LogIn> {
                   ),
                 ],
               ),
-              const SizedBox(height: 150),
+              SizedBox(height: 150),
               // log in first
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 35.0, right: 25.0),
                 child: Text(
                   'By clicking Log in, you agree with our Terms. Learn how we process your data in our Privacy Policy and Cookies Policy',
@@ -53,37 +60,43 @@ class _LogInState extends State<LogIn> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               //username or email textfield
 
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               // password textField
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
+                padding:  EdgeInsets.symmetric(horizontal: 25),
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => pageA()));
                   },
                   child: Container(
-                    padding: const EdgeInsets.all(20),
+                    padding:  EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: Colors.white,
                     ),
                     child: Center(
                       child: Row(
-                        children: const [
-                          Icon(
-                            Icons.add_circle,
-                            size: 40,
-                            color: Colors.black54,
+                        children:  [
+                          Container(
+                            height: 50,
+                            width: 50,
+                            child: Padding(
+                              padding: const EdgeInsets.all(3.0),
+                              child: SvgPicture.asset(
+                                "assets/images/google.svg",
+
+                              ),
+                            ),
                           ),
                           SizedBox(
                             width: 15,
                           ),
                           Padding(
-                            padding: EdgeInsets.only(left: 40),
+                            padding: EdgeInsets.only(left: 25),
                             child: Text(
                               'LOG IN WITH GOOGLE',
                               style: TextStyle(
@@ -99,33 +112,39 @@ class _LogInState extends State<LogIn> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
+                padding:  EdgeInsets.symmetric(horizontal: 25),
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => pageA()));
                   },
                   child: Container(
-                    padding: const EdgeInsets.all(20),
+                    padding:  EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: Colors.white,
                     ),
                     child: Center(
                       child: Row(
-                        children: const [
-                          Icon(
-                            Icons.ad_units_sharp,
-                            size: 40,
-                            color: Colors.black54,
+                        children:  [
+                          Container(
+                            height: 50,
+                            width: 50,
+                            child: Padding(
+                              padding: const EdgeInsets.all(3.0),
+                              child: SvgPicture.asset(
+                                "assets/images/facebook.svg",
+
+                              ),
+                            ),
                           ),
                           SizedBox(
                             width: 15,
                           ),
                           Padding(
-                            padding: EdgeInsets.only(left: 25),
+                            padding: EdgeInsets.only(left: 15),
                             child: Text(
                               'LOG IN WITH FACEBOOK',
                               style: TextStyle(
@@ -142,25 +161,25 @@ class _LogInState extends State<LogIn> {
                 ),
               ),
               // sign in button
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
+                padding:  EdgeInsets.symmetric(horizontal: 25),
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => pageA()));
                   },
                   child: Container(
-                    padding: const EdgeInsets.all(20),
+                    padding:  EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: Colors.white,
                     ),
                     child: Center(
                       child: Row(
-                        children: const [
+                        children:  [
                           Icon(
-                            Icons.adb,
+                            Icons.phone,
                             size: 40,
                             color: Colors.black54,
                           ),
@@ -168,6 +187,7 @@ class _LogInState extends State<LogIn> {
                             width: 15,
                           ),
                           Text(
+
                             'LOG IN WITH PHONE NUMBER',
                             style: TextStyle(
                               color: Colors.black54,
@@ -181,9 +201,9 @@ class _LogInState extends State<LogIn> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               // register now
-              const Text(
+              Text(
                 'Trouble logging in?',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
